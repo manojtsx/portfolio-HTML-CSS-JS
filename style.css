@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 @media (prefers-color-scheme:dark){
   :root{
-    --background-color : black;
+    --background-color : rgb(53, 50, 50);
     --color :white;
     --hover-color : #6BFF33; 
-    --nav-sticky : black;
+    --nav-sticky : rgb(27, 21, 21);
   }
 }
 @media (prefers-color-scheme:light){
@@ -226,6 +226,7 @@ nav.sticky .menu-btn {
   border-color: var(--background-color);
   background-color: var(--color);
   color: var(--background-color);
+  box-shadow: 0 5px 10px rgba(247, 241, 241, 0.959);
 }
 
 /* About Section Styling */
@@ -426,9 +427,12 @@ section .button a:hover {
   text-align: center;
   border-radius: 12px;
   padding: 30px 10px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 5px 10px rgba(250, 250, 250, 0.521);
   cursor: default;
   transition: all 0.4s ease;
+}
+.services .boxes .box:hover{
+  box-shadow: 0 5px 10px rgba(54, 57, 212, 0.521);
 }
 
 .services .boxes .box:hover {
@@ -493,6 +497,7 @@ section .button a:hover {
   grid-auto-columns: 50%;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
+  scroll-snap-align: center;
 }
 .projects .boxes::-webkit-scrollbar{
   height: 8px;
@@ -501,18 +506,21 @@ section .button a:hover {
 }
 
 .projects .boxes .box {
+  background-color: var(--background-color);
   width: 80%;
   margin: 20px 0;
   text-align: center;
   border-radius: 12px;
   padding: 30px 10px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 5px 10px rgba(224, 209, 209, 0.61);
   cursor: default;
   transition: all 0.4s ease;
 }
+
 .projects .boxes .box:hover{
-  transform: scaleX(1.2);
+  box-shadow: 0 5px 30px rgb(2, 27, 252);
 }
+
 .projects .boxes .box .icon {
   height: 50px;
   width: 50px;

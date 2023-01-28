@@ -23,12 +23,12 @@
 * {
   margin: 0;
   padding: 0;
-  background-color:transparent;
   text-decoration: none;
   scroll-behavior: smooth;
 }
 body{
   width: 100vw;
+  overflow: clip;
 }
 
 /*water bubble mouse pointer styling*/
@@ -586,7 +586,7 @@ section .button a:hover {
   padding-left: 15px;
   color: var(--color);
   display: grid;
-  gap: 3;
+  gap: 1;
   grid-auto-flow: column;
   grid-auto-columns: 50%;
   overflow-x: auto;
@@ -604,7 +604,7 @@ section .button a:hover {
 .projects .boxes .box {
   background-color: var(--background-color);
   width: 80%;
-  margin: 20px 10%;
+  margin-left: 10%;
   text-align: center;
   border-radius: 12px;
   padding: 30px 10px;

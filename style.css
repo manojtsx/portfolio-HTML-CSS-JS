@@ -460,13 +460,7 @@ section .button a:hover {
 
 /* My Services CSS */
 .services {
-  transform: translateX(-100%);
-  transition: transform 1s ease-in-out;
   overflow: clip;
-}
-
-.services.in-view {
-  transform: translateX(0%);
 }
 
 .services .boxes {

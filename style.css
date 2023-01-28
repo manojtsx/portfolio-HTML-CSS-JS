@@ -23,7 +23,7 @@
 * {
   margin: 0;
   padding: 0;
-  background-color:transparent;
+  background-color:var(--background-color);
   text-decoration: none;
   scroll-behavior: smooth;
 }

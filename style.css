@@ -287,17 +287,6 @@ section .content {
   margin: auto;
   font-family: 'Poppins', sans-serif;
 }
-
-.about {
-  transform: translate(100%, 100%);
-  transition: transform 1s ease-in-out;
-
-}
-
-.about.in-view {
-  transform: translate(0);
-}
-
 .about .about-details {
   display: flex;
   justify-content: space-between;
@@ -404,14 +393,7 @@ section .button a:hover {
 /* My Skills CSS */
 
 .skills {
-  transform: translateX(100%);
-  transition: transform 1s ease-in-out;
   background: var(--background-color);
-  overflow: clip;
-}
-
-.skills.in-view {
-  transform: translateX(0);
 }
 
 .skills .content {
@@ -550,14 +532,6 @@ section .button a:hover {
 .contact {
   background: var(--background-color);
   color: var(--color);
-  transform: translateY(100%);
-  transition: transform 1s ease-in-out;
-  overflow: clip;
-}
-
-.contact.in-view {
-  transform: translateX(0%);
-
 }
 
 .contact .content {
@@ -574,12 +548,6 @@ section .button a:hover {
 /* My Projects CSS */
 .projects {
   background: var(--background-color);
-  transform: scale(0.1);
-  transition: transform 1s ease-in-out;
-}
-
-.projects.in-view {
-  transform: scale(1);
 }
 
 .projects .boxes {

@@ -1,4 +1,9 @@
+const waterBubble = document.querySelector(".water-bubble");
 
+document.addEventListener("mousemove", e => {
+  waterBubble.style.left = `${e.clientX - 10}px`;
+  waterBubble.style.top = `${e.clientY - 10}px`;
+});
 
 // Sticky Navigation Menu JS Code
 let nav = document.querySelector("nav");
@@ -45,3 +50,58 @@ for (var i = 0; i < navLinks.length; i++) {
     menuBtn.style.pointerEvents = "auto";
   });
 }
+
+//Appearing animation for about section
+const animatedContentAbout = document.querySelector(".about");
+const observerAbout = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    animatedContentAbout.classList.add("in-view");
+    observerAbout.unobserve(animatedContentAbout);
+  }});
+observerAbout.observe(animatedContentAbout);
+
+//Appearing animation for skills section
+const animatedContentSkills = document.querySelector(".skills");
+const observerSkills = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    animatedContentSkills.classList.add("in-view");
+    observerSkills.unobserve(animatedContentSkills);
+  }});
+observerSkills.observe(animatedContentSkills);
+
+//Appearing animation for services section
+const animatedContentServices = document.querySelector(".services");
+const observerServices = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    animatedContentServices.classList.add("in-view");
+    observerServices.unobserve(animatedContentServices);
+  }
+});
+observerServices.observe(animatedContentServices);
+
+//Appearing animation for contact section
+const animatedContentContact = document.querySelector(".contact");
+const observerContact = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    animatedContentContact.classList.add("in-view");
+    observerContact.unobserve(animatedContentContact);
+  }
+});
+observerContact.observe(animatedContentContact);
+
+//Appearing animation for projects section
+const animatedContentProjects = document.querySelector(".projects");
+const observerProjects = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    animatedContentProjects.classList.add("in-view");
+    observerProjects.unobserve(animatedContentProjects);
+  }
+});
+observerProjects.observe(animatedContentProjects);
+
+
+
+
+
+
+

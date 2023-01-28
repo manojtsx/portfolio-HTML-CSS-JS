@@ -1,27 +1,65 @@
 /* Google Font CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
-@media (prefers-color-scheme:dark){
-  :root{
-    --background-color : rgb(53, 50, 50);
-    --color :white;
-    --hover-color : #6BFF33; 
-    --nav-sticky : rgb(27, 21, 21);
+
+@media (prefers-color-scheme:dark) {
+  :root {
+    --background-color: rgb(53, 50, 50);
+    --color: white;
+    --hover-color: #6BFF33;
+    --nav-sticky: rgb(27, 21, 21);
   }
 }
-@media (prefers-color-scheme:light){
-  :root{
-    --background-color : white;
-    --color:black;
-    --hover-color : #4070f4;
-    --nav-sticky : #4070f4;
+
+@media (prefers-color-scheme:light) {
+  :root {
+    --background-color: white;
+    --color: black;
+    --hover-nav-sticky: red;
+    --hover-color: #4070f4;
+    --nav-sticky: #4070f4;
   }
 }
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background-color:transparent;
   text-decoration: none;
   scroll-behavior: smooth;
+}
+
+/*water bubble mouse pointer styling*/
+.water-bubble {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #00bfff;
+  /* a light blue color */
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+  /* give the water bubble a subtle shadow */
+  animation: water-bubble-animation 1s ease-in-out infinite;
+  /* animate the water bubble */
+  pointer-events: none;
+  /* so the water bubble doesn't interfere with other elements */
+}
+
+/* Keyframe animation for the water bubble */
+@keyframes water-bubble-animation {
+  0% {
+    transform: scale(1);
+    /* start at normal size */
+  }
+
+  50% {
+    transform: scale(1.5);
+    /* grow slightly larger */
+  }
+
+  100% {
+    transform: scale(1);
+    /* return to normal size */
+  }
 }
 
 
@@ -72,7 +110,8 @@ nav .navbar .logo a {
   font-size: 35px;
   color: var(--color);
 }
-nav .navbar .logo a:hover{
+
+nav .navbar .logo a:hover {
   color: var(--hover-color);
 }
 
@@ -112,7 +151,7 @@ nav.sticky .menu a {
 }
 
 nav.sticky .menu a:hover {
-  color: var(--hover-color);
+  color: var(--hover-nav-sticky);
 }
 
 .navbar .media-icons a {
@@ -120,16 +159,19 @@ nav.sticky .menu a:hover {
   font-size: 18px;
   margin: 0 6px;
 }
-.navbar .media-icons a:hover{
+
+.navbar .media-icons a:hover {
   color: var(--hover-color);
 }
 
 nav.sticky .media-icons a {
   color: var(--color);
 }
-nav.sticky .media-icons a:hover{
-  color: var(--hover-color);
+
+nav.sticky .media-icons a:hover {
+  color: var(--hover-nav-sticky);
 }
+
 /* Side Navigation Menu Button CSS */
 nav .menu-btn,
 .navbar .menu .cancel-btn {
@@ -217,7 +259,6 @@ nav.sticky .menu-btn {
   font-weight: 400;
   background: var(--background-color);
   color: var(--color);
-  cursor: pointer;
   border: 2px solid transparent;
   transition: all 0.4s ease;
 }
@@ -235,12 +276,23 @@ nav.sticky .menu-btn {
 section {
   padding-top: 40px;
   background-color: var(--background-color);
+  overflow: clip;
 }
 
 section .content {
   width: 80%;
   margin: auto;
   font-family: 'Poppins', sans-serif;
+}
+
+.about {
+  transform: translate(100%, 100%);
+  transition: transform 1s ease-in-out;
+
+}
+
+.about.in-view {
+  transform: translate(0);
 }
 
 .about .about-details {
@@ -347,8 +399,16 @@ section .button a:hover {
 }
 
 /* My Skills CSS */
+
 .skills {
+  transform: translateX(100%);
+  transition: transform 1s ease-in-out;
   background: var(--background-color);
+  overflow: clip;
+}
+
+.skills.in-view {
+  transform: translateX(0);
 }
 
 .skills .content {
@@ -414,6 +474,16 @@ section .button a:hover {
 
 
 /* My Services CSS */
+.services {
+  transform: translateX(-100%);
+  transition: transform 1s ease-in-out;
+  overflow: clip;
+}
+
+.services.in-view {
+  transform: translateX(0%);
+}
+
 .services .boxes {
   display: flex;
   flex-wrap: wrap;
@@ -430,8 +500,10 @@ section .button a:hover {
   box-shadow: 0 5px 10px rgba(250, 250, 250, 0.521);
   cursor: default;
   transition: all 0.4s ease;
+  
 }
-.services .boxes .box:hover{
+
+.services .boxes .box:hover {
   box-shadow: 0 5px 10px rgba(54, 57, 212, 0.521);
 }
 
@@ -475,6 +547,14 @@ section .button a:hover {
 .contact {
   background: var(--background-color);
   color: var(--color);
+  transform: translateY(100%);
+  transition: transform 1s ease-in-out;
+  overflow: clip;
+}
+
+.contact.in-view {
+  transform: translateX(0%);
+
 }
 
 .contact .content {
@@ -489,7 +569,18 @@ section .button a:hover {
 }
 
 /* My Projects CSS */
+.projects {
+  background: var(--background-color);
+  transform: scale(0.1);
+  transition: transform 1s ease-in-out;
+}
+
+.projects.in-view {
+  transform: scale(1);
+}
+
 .projects .boxes {
+  padding-left: 15px;
   color: var(--color);
   display: grid;
   gap: 1;
@@ -498,8 +589,10 @@ section .button a:hover {
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scroll-snap-align: center;
+  ;
 }
-.projects .boxes::-webkit-scrollbar{
+
+.projects .boxes::-webkit-scrollbar {
   height: 8px;
   width: 50px;
   color: #4070f4;
@@ -517,7 +610,7 @@ section .button a:hover {
   transition: all 0.4s ease;
 }
 
-.projects .boxes .box:hover{
+.projects .boxes .box:hover {
   box-shadow: 0 5px 30px rgb(2, 27, 252);
 }
 
@@ -539,7 +632,7 @@ section .demo-button {
   margin: 16px 0;
 }
 
-section .demo-button a{
+section .demo-button a {
   outline: none;
   padding: 5px 13px;
   border-radius: 4px;
@@ -547,14 +640,19 @@ section .demo-button a{
   font-weight: 400;
   background: #4070f4;
   color: #fff;
-  border: 2px solid transparent;
+  border: 2px solid #4070f4;
   cursor: pointer;
   transition: all 0.4s ease;
 }
-section .demo-button a:hover{
+
+section .demo-button a:hover {
   color: #4070f4;
   background: #fff;
 }
+i{
+  background-color: transparent;
+}
+
 /* Footer CSS */
 footer {
   background: var(--background-color);
@@ -586,7 +684,6 @@ footer .text span a:hover {
   color: #fff;
   background: #4070f4;
   padding: 7px 12px;
-  ;
   font-size: 18px;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.15);
@@ -621,10 +718,12 @@ footer .text span a:hover {
     margin: 20px 0;
     width: calc(100% / 2 - 20px);
   }
-  .projects .boxes{
+
+  .projects .boxes {
     grid-auto-columns: 80%;
   }
-  .projects .boxes .box{
+
+  .projects .boxes .box {
     width: 95%;
   }
 }
@@ -728,5 +827,3 @@ footer .text span a:hover {
     color: #4070f4;
   }
 }
-
-

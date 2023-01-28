@@ -562,7 +562,7 @@ section .button a:hover {
 .projects .boxes .box {
   background-color: var(--background-color);
   width: 80%;
-  margin-left: 10%;
+  margin-left: 80px 10%;
   text-align: center;
   border-radius: 12px;
   padding: 30px 10px;

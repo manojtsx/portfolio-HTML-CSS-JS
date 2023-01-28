@@ -23,14 +23,10 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   text-decoration: none;
   scroll-behavior: smooth;
 }
-body{
-  width: 100vw;
-  overflow: clip;
-}
-
 /*water bubble mouse pointer styling*/
 .water-bubble {
   position: absolute;

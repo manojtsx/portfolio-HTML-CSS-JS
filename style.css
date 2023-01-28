@@ -586,7 +586,7 @@ section .button a:hover {
   padding-left: 15px;
   color: var(--color);
   display: grid;
-  gap: 1;
+  gap: 3;
   grid-auto-flow: column;
   grid-auto-columns: 50%;
   overflow-x: auto;

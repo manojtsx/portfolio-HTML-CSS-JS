@@ -21,13 +21,15 @@
 }
 
 * {
-  width: 100vw;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color:transparent;
   text-decoration: none;
   scroll-behavior: smooth;
+}
+body{
+  width: 100vw;
 }
 
 /*water bubble mouse pointer styling*/

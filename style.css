@@ -541,7 +541,7 @@ section .button a:hover {
 }
 
 .projects .boxes {
-  padding-left: 15px;
+  padding:10px 15px;
   color: var(--color);
   display: grid;
   gap: 1;
@@ -562,19 +562,20 @@ section .button a:hover {
 .projects .boxes .box {
   background-color: var(--background-color);
   width: 80%;
-  margin-left: 80px 10%;
+  margin:0 10%;
   text-align: center;
   border-radius: 12px;
-  padding: 30px 10px;
+  padding: 20px 10px;
   box-shadow: 0 5px 10px rgba(224, 209, 209, 0.61);
   cursor: default;
   transition: all 0.4s ease;
 }
-
 .projects .boxes .box:hover {
   box-shadow: 0 5px 30px rgb(2, 27, 252);
 }
-
+iframe{
+  width: 100%;
+}
 .projects .boxes .box .icon {
   height: 50px;
   width: 50px;

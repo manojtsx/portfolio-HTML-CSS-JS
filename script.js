@@ -83,3 +83,37 @@ function erase() {
 document.addEventListener("DOMContentLoaded", function() {
   setTimeout(type, 1000);
 });
+
+
+//calling the api for quotes
+const quotes = document.getElementById("quotes");
+const author = document.getElementById("author");
+const tweetBtn = document.getElementById("tweetbtn");
+let realData = "";
+let quotesData = "";
+const tweetNow = () => {
+  let tweetPost = `https://twitter.com/intent/tweet?text=${quotesData}`;
+  window.open(tweetPost);
+};
+tweetBtn.addEventListener("click", tweetNow);
+
+const api = "https://type.fit/api/quotes";
+const getNewQuotes = () => {
+  let rnum = Math.floor(Math.random() * 100);
+  quotes.innerText = `"${realData[rnum].text}"`;
+  quotesData = `${realData[rnum].text}`;
+  if (realData[rnum].author == null) {
+    author.innerText = "By unknown";
+  } else {
+    author.innerText = `By ${realData[rnum].author}`;
+  }
+};
+const getQuotes = async () => {
+  try {
+    let data = await fetch(api);
+    realData = await data.json();
+    getNewQuotes();
+  } catch (err) {}
+};
+
+getQuotes();

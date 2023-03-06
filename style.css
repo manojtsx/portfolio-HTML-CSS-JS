@@ -414,6 +414,10 @@ section .button a:hover {
   align-items: center;
   gap:10px;
 }
+.about .text .quotes,
+.about .text .author{
+text-align:center;
+}
 .about .text .tweetbtn{
   outline: none;
   padding: 8px 16px;

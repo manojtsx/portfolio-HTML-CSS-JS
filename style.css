@@ -290,7 +290,10 @@ section {
   background-color: white;
   overflow: clip;
 }
-
+section.about{
+  display: flex;
+  flex-direction: row;
+}
 section .content {
   width: 80%;
   margin: auto;
